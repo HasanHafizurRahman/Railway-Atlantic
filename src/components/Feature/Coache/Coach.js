@@ -5,7 +5,7 @@ const Coach = ({coach}) => {
         <div>
            <div class="max-w-lg mx-14 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
     <div class="px-4 py-2">
-        <h1 class="text-3xl font-bold text-gray-800 uppercase dark:text-white">{coach.name}</h1>
+        <h1 class="text-3xl font-bold text-gray-800 uppercase dark:text-white">{coach.name} </h1>
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus</p>
     </div>
 

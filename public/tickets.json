@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "station": "Washington DC",
+        "departure": [
+            "08:25PM",
+            "12:45PM",
+            "03:00AM"
+        ]
+    },
+    {
+        "_id": 2,
+        "station": "Pennsylvania Station",
+        "departure": [
+            "10:25PM",
+            "12:15PM",
+            "05:00AM"
+        ]
+    },
+    {
+        "_id": 3,
+        "station": "Moynihan Train Hall",
+        "departure": [
+            "07:25PM",
+            "11:55PM",
+            "04:30AM"
+        ]
+    },
+    {
+        "_id": 4,
+        "station": "G23rd Street",
+        "departure": [
+            "09:25PM",
+            "01:45Am",
+            "06:00AM"
+        ]
+    },
+    {
+        "_id": 5,
+        "station": "Times Square",
+        "departure": [
+            "08:35PM",
+            "12:45PM",
+            "07:00AM"
+        ]
+    },
+    {
+        "_id": 6,
+        "station": "Houston St",
+        "departure": [
+            "12:35PM",
+            "02:45PM",
+            "09:00AM"
+        ]
+    }
+]
