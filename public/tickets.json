@@ -10,7 +10,7 @@
     },
     {
         "_id": 2,
-        "station": "Pennsylvania Station",
+        "station": "Pennsylvania",
         "departure": [
             "10:25PM",
             "12:15PM",
@@ -19,7 +19,7 @@
     },
     {
         "_id": 3,
-        "station": "Moynihan Train Hall",
+        "station": "Moynihan T.H",
         "departure": [
             "07:25PM",
             "11:55PM",

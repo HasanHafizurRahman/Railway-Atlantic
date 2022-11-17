@@ -3,9 +3,11 @@ import { format } from 'date-fns';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Ticket from './Ticket';
+import BookingModal from './BookingModal';
 
 const AvailableTicket = ({date}) => {
     const [tickets, setTickets] = useState([]);
+    const [tForm, setTform] = useState(null)
 
     useEffect(() => {
       fetch('tickets.json')
@@ -22,10 +24,11 @@ const AvailableTicket = ({date}) => {
                 tickets.map(ticket =><Ticket
                 key={ticket._id}
                 ticket={ticket}
+                setTform={setTform}
                 ></Ticket>)
             }
         </div>
-        
+        {tForm && <BookingModal tForm={tForm}></BookingModal>}
         </div>
     );
 };

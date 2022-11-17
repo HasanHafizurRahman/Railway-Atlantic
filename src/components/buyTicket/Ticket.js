@@ -1,8 +1,11 @@
 import React from 'react';
+import { useState } from 'react';
 import ticket2 from '../../assets/ticket (2).jpg'
 
-const Ticket = ({ticket}) => {
+const Ticket = ({ ticket , setTform, setShowModal }) => {
     const {station, departure} = ticket;
+    const [open, setOpen] = useState(true)
+    // const [showModal, setShowModal] = useState(false);
     return (
         <div>
             <div class="max-w-lg overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
@@ -25,9 +28,16 @@ const Ticket = ({ticket}) => {
         <p class="mt-1 text-xl text-gray-600 dark:text-gray-400">{departure.length} {departure.length > 1 ? "Trains" : "Train"} available.</p>
     </div>
 
-    <div class="flex items-center justify-between px-4 py-2 bg-gray-900">
+    <div class="flex items-center justify-center px-4 py-2 bg-gray-900">
         <h1 class="text-lg font-bold text-white"></h1>
-        <button class="px-2 py-1 text-xs font-semibold text-gray-900 uppercase transition-colors duration-300 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">Book Your Tickt</button>
+        
+        <button
+        onClick={() => setTform(ticket)}
+        // onClick={() => setShowModal(true)}
+        disabled={departure.length === 0}
+        class="px-2 py-2 text-xs font-bold text-gray-900 uppercase transition-colors duration-300 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">
+        Book Your Tickt
+    </button>
     </div>
 </div>
         </div>
