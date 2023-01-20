@@ -1,85 +1,61 @@
 import { useState } from "react";
 import Ticket from "./Ticket";
+import { format } from "date-fns";
 
-export default function BookingModal({tForm}) {
-    // const [showModal, setShowModal] = useState(false);
-    return (
-        <>
-            {/* <div className="flex items-center justify-center h-60">
-                <button
-                    className="px-6 py-3 text-purple-100 bg-purple-600 rounded-md"
-                    type="button"
-                    onClick={() => setShowModal(true)}
-                >
-                    Open Modal
-                </button>
-            </div>
-            {showModal ? (
-                <>
-                    <div className="fixed inset-0 z-10 overflow-y-auto">
-                        <div
-                            className="fixed inset-0 w-full h-full bg-black opacity-40"
-                            onClick={() => setShowModal(false)}
-                        ></div>
-                        <div className="flex items-center min-h-screen px-4 py-8">
-                            <div className="relative w-full max-w-lg p-4 mx-auto bg-white rounded-md shadow-lg">
-                                <div className="mt-3 sm:flex">
-                                    <div className="flex items-center justify-center flex-none w-12 h-12 mx-auto bg-red-100 rounded-full">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="w-6 h-6 text-red-600"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                fillRule="evenodd"
-                                                d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
-                                                clipRule="evenodd"
-                                            />
-                                        </svg>
-                                    </div>
-                                    <div className="mt-2 text-center sm:ml-4 sm:text-left">
-                                        <h4 className="text-lg font-medium text-gray-800">
-                                            Delete account ?
-                                        </h4>
-                                        <p className="mt-2 text-[15px] leading-relaxed text-gray-500">
-                                            {tForm.station}
-                                        </p>
-                                        <div className="items-center gap-2 mt-3 sm:flex">
-                                            <button
-                                                className="w-full mt-2 p-2.5 flex-1 text-white bg-red-600 rounded-md outline-none ring-offset-2 ring-red-600 focus:ring-2"
-                                                onClick={() =>
-                                                    setShowModal(false)
-                                                }
-                                            >
-                                                Delete
-                                            </button>
-                                            <button
-                                                className="w-full mt-2 p-2.5 flex-1 text-gray-800 rounded-md outline-none border ring-offset-2 ring-indigo-600 focus:ring-2"
-                                                onClick={() =>
-                                                    setShowModal(false)
-                                                }
-                                            >
-                                                Cancel
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </>
-            ) : null} */}
-            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
-<div className="modal modal-bottom sm:modal-middle">
-  <div className="modal-box">
-    <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
-    <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
-    <div className="modal-action">
-      <label htmlFor="my-modal-6" className="btn">Yay!</label>
-    </div>
-  </div>
-</div>
-        </>
-    );
+export default function BookingModal({ date, tForm }) {
+  return (
+    <>
+      <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg text-center">
+            Please complete form to select your booking!
+          </h3>
+          <form className="grid grid-cols-1 gap-3 justify-items-center">
+            <input
+              type="text"
+              placeholder="Type here"
+              value={format(date, "PP")}
+              className="input input-bordered w-full max-w-xs"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered w-full max-w-xs"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered w-full max-w-xs"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered w-full max-w-xs"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered w-full max-w-xs"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered w-full max-w-xs"
+            />
+            <input
+              type="submit"
+              value="Complete Booking"
+              className="btn btn-outline w-60 max-w-xs"
+            />
+          </form>
+          <div className="modal-action">
+            <label htmlFor="my-modal-6" className="btn btn-outline btn-xs">
+              close !
+            </label>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }

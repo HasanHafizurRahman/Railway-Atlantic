@@ -1,36 +1,36 @@
-import React from 'react';
-import { format } from 'date-fns';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import Ticket from './Ticket';
-import BookingModal from './BookingModal';
+import React from "react";
+import { format } from "date-fns";
+import { useState } from "react";
+import { useEffect } from "react";
+import Ticket from "./Ticket";
+import BookingModal from "./BookingModal";
 
-const AvailableTicket = ({date}) => {
-    const [tickets, setTickets] = useState([]);
-    const [tForm, setTform] = useState(null)
+const AvailableTicket = ({ date }) => {
+  const [tickets, setTickets] = useState([]);
+  const [tForm, setTform] = useState(null);
 
-    useEffect(() => {
-      fetch('tickets.json')
-      .then(res => res.json())
-      .then(data => setTickets(data))
-    }, [])
-    
-    return (
-        <div>
-            <p className='text-xl text-center font-mono text-black-900'>You selected ticket for {format(date, 'PP')}.</p>
-            <h1 class="text-3xl font-bold text-center my-4 font-mono text-gray-800 uppercase dark:text-white">Departure Time & Destination .</h1>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center'>
-            {
-                tickets.map(ticket =><Ticket
-                key={ticket._id}
-                ticket={ticket}
-                setTform={setTform}
-                ></Ticket>)
-            }
-        </div>
-        {tForm && <BookingModal tForm={tForm}></BookingModal>}
-        </div>
-    );
+  useEffect(() => {
+    fetch("tickets.json")
+      .then((res) => res.json())
+      .then((data) => setTickets(data));
+  }, []);
+
+  return (
+    <div>
+      <p className="text-xl text-center font-mono text-black-900">
+        You selected ticket for {format(date, "PP")}.
+      </p>
+      <h1 class="text-3xl font-bold text-center my-4 font-mono text-gray-800 uppercase dark:text-white">
+        Departure Time & Destination .
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+        {tickets.map((ticket) => (
+          <Ticket key={ticket._id} ticket={ticket} setTform={setTform}></Ticket>
+        ))}
+      </div>
+      {tForm && <BookingModal date={date} tForm={tForm}></BookingModal>}
+    </div>
+  );
 };
 
 export default AvailableTicket;
