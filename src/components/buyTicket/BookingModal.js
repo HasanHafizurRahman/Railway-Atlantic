@@ -2,10 +2,10 @@ import { useState } from "react";
 import Ticket from "./Ticket";
 
 export default function BookingModal({tForm}) {
-    const [showModal, setShowModal] = useState(false);
+    // const [showModal, setShowModal] = useState(false);
     return (
         <>
-            <div className="flex items-center justify-center h-60">
+            {/* <div className="flex items-center justify-center h-60">
                 <button
                     className="px-6 py-3 text-purple-100 bg-purple-600 rounded-md"
                     type="button"
@@ -69,8 +69,17 @@ export default function BookingModal({tForm}) {
                         </div>
                     </div>
                 </>
-            ) : null}
-            
+            ) : null} */}
+            <input type="checkbox" id="my-modal-6" className="modal-toggle" />
+<div className="modal modal-bottom sm:modal-middle">
+  <div className="modal-box">
+    <h3 className="font-bold text-lg">Congratulations random Internet user!</h3>
+    <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+    <div className="modal-action">
+      <label htmlFor="my-modal-6" className="btn">Yay!</label>
+    </div>
+  </div>
+</div>
         </>
     );
 }

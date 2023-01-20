@@ -11,7 +11,7 @@ const Ticket = ({ ticket , setTform, setShowModal }) => {
             <div class="max-w-lg overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
     <div class="px-4 py-2">
         <h1 class="text-3xl font-bold text-gray-800 uppercase dark:text-white">{station}</h1>
-        <h2 class="text-xl font-bold font-serif text-center py-3 text-gray-700 uppercase dark:text-white">Schedules :</h2>
+        <h2 class="text-xl font-bold font-sans text-center py-3 text-gray-700 uppercase dark:text-white">Schedules :</h2>
         
         <p class="mt-1 text-xl text-gray-600 dark:text-blue-400">
             {
@@ -31,13 +31,14 @@ const Ticket = ({ ticket , setTform, setShowModal }) => {
     <div class="flex items-center justify-center px-4 py-2 bg-gray-900">
         <h1 class="text-lg font-bold text-white"></h1>
         
-        <button
+        <label 
         onClick={() => setTform(ticket)}
         // onClick={() => setShowModal(true)}
         disabled={departure.length === 0}
-        class="px-2 py-2 text-xs font-bold text-gray-900 uppercase transition-colors duration-300 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">
-        Book Your Tickt
-    </button>
+        
+         htmlFor="my-modal-6" className="btn px-2 py-2 text-xs font-bold text-gray-900 uppercase transition-colors duration-300 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">Book Your Ticket
+        
+    </label>
     </div>
 </div>
         </div>
